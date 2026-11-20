@@ -1,0 +1,121 @@
+---
+templateEngineOverride: njk
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+    <script src="theme.js" defer></script>
+    <script src="sticky-notes.js" defer></script>
+    <title>Portfolio</title>
+    <style>
+      nav {
+        border: 1px solid black;
+      }
+    </style>
+
+    <script>
+      // Placeholder for future website analytics integration.
+      // This will track portfolio visits in a future version.
+    </script>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <h1>Vincent Nguyen</h1>
+
+        <ul>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="current.html">Current Project</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experiments.html">Experiments</a></li>
+          <li><a href="form-no-js.html">Form No JS</a></li>
+          <li><a href="form-with-js.html">Form With JS</a></li>
+        </ul>
+
+        <button id="theme-toggle" type="button" hidden>
+          Switch to Light Mode
+        </button>
+      </nav>
+      <article>
+        <h2>Introductory</h2>
+        <p>
+          Hello! My name is Vincent Nguyen and I'm a senior studying computer
+          science at UC San Diego. I'm interesting in
+          <strong>cloud development, devops, and IT</strong>. My current mindset
+          is <i>learn by doing</i> , so I'm building small cloud projects to
+          strengthen my fundamentals
+        </p>
+
+        <h3>Hobbies</h3>
+        <p>
+          Outside of working, I love going to the gym and getting a good
+          workout. I <em>especially</em> enjoy playing <b>basketball</b> or
+          going for a <b>run</b> whenever I can. <br />
+        </p>
+
+        <h3>Technical Skills</h3>
+
+        <ul>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>AWS</li>
+          <li>SQL</li>
+        </ul>
+      </article>
+
+      <section>
+        <sticky-notes></sticky-notes>
+        <noscript
+          ><p>
+            Enable JavaScript to load sticky notes and live cat facts.
+          </p></noscript
+        >
+
+        <button id="toggle-compact" type="button">Toggle Compact View</button>
+      </section>
+
+      <h3>Contact Me</h3>
+
+      <form>
+        <fieldset>
+          <legend>Contact Information</legend>
+
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+
+          <br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+
+          <br />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+
+          <br />
+
+          <button type="submit">Send Message</button>
+        </fieldset>
+      </form>
+    </main>
+    {% include "footer.njk" %}
+
+    <hello-world></hello-world>
+
+    <script>
+      class HelloWorld extends HTMLElement {
+        connectedCallback() {
+          console.log("Hello World!");
+        }
+      }
+
+      customElements.define("hello-world", HelloWorld);
+    </script>
+  </body>
+</html>

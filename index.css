@@ -7,11 +7,22 @@
   --spacing: 1rem;
 }
 
+/* Default: dark theme */
+sticky-notes {
+  --note-background: #fff2a8;
+  --note-text: #333333;
+}
+
 [data-theme="light"] {
   --color-background: #F5F0E8;
   --color-gold: #80602D;
   --color-text: #241A15;
   --color-nav: #E5D8C5;
+}
+
+[data-theme="light"] sticky-notes {
+  --note-background: #80602d;
+  --note-text: #ffffff;
 }
 
 body {
@@ -85,6 +96,99 @@ h1, h2, h3 {
 
 p {
     margin-bottom: var(--spacing);
+}
+
+/* Sticky Note Board */
+.notes-board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual sticky note */
+.sticky-note {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  background-color: var(--note-background, #fff2a8);
+  color: var(--note-text,#333333);
+  font-family: "Comic Sans MS";
+  padding: 20px;
+  width: 180px;
+  min-height: 150px;
+  height: auto;
+
+  border-radius: 5px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+  overflow-wrap: anywhere;
+}
+
+/* Note input blends into sticky note */
+.sticky-note textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+  
+  width: 100%;
+  min-height: 80px;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+}
+
+.sticky-note.selected {
+  outline: 3px solid #7053c8;
+  outline-offset: 3px;
+}
+
+.sticky-note textarea:focus-visible {
+  outline: 2px solid #7053c8;
+  outline-offset: 3px;
+}
+
+sticky-notes .sticky-note button {
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: black;
+
+  margin-top: auto;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  padding: 5px 12px;
+
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Next Note button */
+sticky-notes .next-note-button {
+  margin-top: 25px;
+  margin-right: 12px;
+}
+
+/* Fact button */
+sticky-notes .next-note-button {
+  margin-top: 25px;
+}
+
+sticky-notes .fact-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+sticky-notes[compact] .sticky-note {
+  width: 130px;
+  min-height: 100px;
+  padding: 12px;
+  gap: 8px;
+}
+
+sticky-notes .sticky-note textarea::placeholder {
+  color: currentColor;
+  opacity: 0.65;
 }
 
 /* Buttons */
