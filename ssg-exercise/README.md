@@ -6,8 +6,10 @@ Home and Projects.
 Both pages share a footer defined in `src/_includes/footer.njk`.
 
 ## Installation
+From the repository root:
 
 ```bash
+cd ssg-exercise
 npm install
 ```
 

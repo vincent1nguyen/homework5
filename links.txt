@@ -1,2 +1,3 @@
-Repository: https://github.com/vincent1nguyen/homework5
-Website: https://frolicking-narwhal-fc3f3a.netlify.app/
+https://github.com/vincent1nguyen/homework5
+https://leafy-valkyrie-663e23.netlify.app/
+https://leafy-valkyrie-663e23.netlify.app/
